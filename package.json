@@ -1,0 +1,28 @@
+{
+  "name": "movie-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorman99/movie-search.git"
+  },
+  "author": "dorman99",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorman99/movie-search/issues"
+  },
+  "homepage": "https://github.com/dorman99/movie-search#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql-await": "^2.1.6",
+    "validate.js": "^0.13.1"
+  }
+}
