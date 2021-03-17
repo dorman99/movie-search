@@ -5,6 +5,7 @@ const express = require('express')
 const app = express();
 const bodyParser = require("body-parser");
 const routers = require("./route");
+const { successDefaultResponse } = require("./utils/message_response");
 let appInUse = null;
 
 app.use(bodyParser.urlencoded({
@@ -14,6 +15,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.use("/api/v1", routers);
+
+app.get("/", (req, res) => {
+    res.status(200).json(successDefaultResponse({data: {message: "ALIVE"}}));
+});
 
 appInUse = app.listen(SERVER_PORT || 5000, (err) => {
     if (err) console.log(err);
