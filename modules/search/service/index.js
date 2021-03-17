@@ -1,3 +1,4 @@
 module.exports = {
-    Search: require("./search")
+    Search: require("./search"),
+    Cache: require("./cache")
 }

@@ -31,23 +31,27 @@ const authorization = async (req, res, next) => {
 const _cacheKey = ({credentialToken}) => `credentials:${credentialToken}`;
 
 const _getCache = async ({key}) => {
-    redisClient.get(key, (err, reply) => {
-        if (err) {
-            return Promise.reject(err);
-        } else if (reply) {
-            return Promise.resolve(JSON.parse(reply));
-        }
-        return Promise.resolve(null);
-    })
+    return new Promise((resolve, reject) => {
+        redisClient.get(key, (err, reply) => {
+            if (err) {
+                return reject(err);
+            } else if (reply) {
+                return resolve(JSON.parse(reply));
+            }
+            return resolve(null);
+        })
+    });
 }
 
 const _setCache = async ({key, data}) => {
-    redisClient.set(key, JSON.stringify(data), 'EX', TTL || 60 * 60, (err) => {
-        if (err) {
-            return Promise.reject(err);
-        }
-        return Promise.resolve(true);
-    })
+    return new Promise((resolve, reject) => {
+        redisClient.set(key, JSON.stringify(data), 'EX', TTL || 60 * 60, (err) => {
+            if (err) {
+                return reject(err);
+            }
+            return resolve(true);
+        })
+    });
 }
 
 module.exports = {

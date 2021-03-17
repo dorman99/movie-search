@@ -18,11 +18,4 @@ searchLoggerQueue.process(async (job, done) => {
 });
 
 
-searchLoggerQueue.on("complete", (job, result) => {
-    console.log("COMPLETE");
-    console.log(job);
-    console.log(result);
-})
-
-
 module.exports = searchLoggerQueue;
