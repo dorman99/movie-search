@@ -15,9 +15,9 @@ app.use(bodyParser.json());
 
 app.use("/api/v1", routers);
 
-appInUse = app.listen(SERVER_PORT || 3000, (err) => {
+appInUse = app.listen(SERVER_PORT || 5000, (err) => {
     if (err) console.log(err);
-    console.log("Port Run: " + SERVER_PORT || 3000); 
+    console.log("Port Run: " + SERVER_PORT || 5000); 
 });
 
 const shutDown = () => {
