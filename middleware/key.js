@@ -2,7 +2,13 @@ const Model = require("../model");
 const { forbbidenAccess } = require("../utils/message_response");
 const config = require("../config");
 const redis = require("redis");
-const redisClient = redis.createClient(config.redis);
+let redisClient
+if(process.env.REDISCLOUD_URL){
+    let redisURL = url.parse(process.env.REDISCLOUD_URL);
+    redisClient = redis.createClient(redisURL)
+} else {
+    redisClient = redis.createClient(config.redis)
+}
 const TTL = 60 * 60;
 
 const authorization = async (req, res, next) => {
