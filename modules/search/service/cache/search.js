@@ -1,12 +1,6 @@
 const config = require("../../../../config");
 const redis = require("redis");
-let redisClient
-if(process.env.REDISCLOUD_URL){
-    let redisURL = process.env.REDISCLOUD_URL;
-    redisClient = redis.createClient(redisURL)
-} else {
-    redisClient = redis.createClient(config.redis)
-}
+let redisClient = redis.createClient(config.redis);
 const TTL = 15 * 60;
 const _cacheKey = ({id}) => `movie:${id}`;
 
