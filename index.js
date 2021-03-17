@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 appInUse = app.listen(PORT || 5000, (err) => {
     if (err) console.log(err);
-    console.log("Port Run: " + PORT || 5000); 
+    console.log("Port Run: " + (PORT || 5000)); 
 });
 
 const shutDown = () => {
