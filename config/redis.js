@@ -1,5 +1,5 @@
 require("dotenv").config();
-const defaultConfig = {
+let defaultConfig = {
     host: process.env.REDIS_HOST,
     port: process.env.REDIS_PORT
 };
