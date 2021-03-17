@@ -2,7 +2,7 @@ const config = require("../../../../config");
 const redis = require("redis");
 let redisClient
 if(process.env.REDISCLOUD_URL){
-    let redisURL = url.parse(process.env.REDISCLOUD_URL);
+    let redisURL = process.env.REDISCLOUD_URL;
     redisClient = redis.createClient(redisURL)
 } else {
     redisClient = redis.createClient(config.redis)
