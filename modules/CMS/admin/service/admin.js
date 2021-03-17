@@ -1,3 +1,4 @@
+"use strict";
 const Model = require("../../../../model");
 const bcrypt = require("../../../../utils/bcrypt");
 

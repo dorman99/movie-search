@@ -1,3 +1,4 @@
+"use strict";
 const {Credential} = require("../../../../model");
 const helpers = require("../../../../utils/helpers");
 
@@ -18,8 +19,13 @@ const remove = async ({id}) => {
     return await Credential.remove({id});
 }
 
+const findToken = async ({token}) => {
+    return await Credential.findToken({token});
+}
+
 module.exports = {
     insert,
     findAll,
-    remove
+    remove,
+    findToken
 }

@@ -1,3 +1,4 @@
 module.exports = {
-    mySql: require("./mysql")
+    mySql: require("./mysql"),
+    redis: require("./redis")
 }

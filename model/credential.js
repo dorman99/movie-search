@@ -1,3 +1,4 @@
+"use strict";
 const mysql = require("mysql-await");
 const config = require("../config");
 const {TABLE_CREDENTIAL} = require("../utils/constants");

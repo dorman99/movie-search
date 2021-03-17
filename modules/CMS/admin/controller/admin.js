@@ -1,3 +1,5 @@
+"use strict";
+
 const Service = require("../service");
 const Validation = require("validate.js");
 const MessageResponse = require("../../../../utils/message_response");
